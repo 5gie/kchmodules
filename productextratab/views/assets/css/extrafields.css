@@ -1,0 +1,294 @@
+#extra_fields {
+  height: 720px;
+  background: url('../img/ingredents.jpg') center top no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#extra_fields:after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: #000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.6s;
+}
+#extra_fields .inner {
+  display: flex;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+}
+#extra_fields .inner .col {
+  flex: 1;
+  transition: 0.6s ease-in-out;
+}
+#extra_fields .inner .col .box {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+#extra_fields .inner .col .box .open {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  margin: 0px auto;
+  transition: 0.3s;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 300px 15px 0px 15px;
+  overflow: hidden;
+}
+#extra_fields .inner .col .box .open span {
+  height: 40px;
+  width: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  transition: 0.3s;
+  font-size: 20px;
+  cursor: pointer;
+}
+#extra_fields .inner .col .box .open span:hover {
+  background: #fff;
+  color: #000;
+}
+#extra_fields .inner .col .box .open h3 {
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+#extra_fields .inner .col .box .open p {
+  margin-top: 15px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #D8D8D8;
+  letter-spacing: 2px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.4s;
+  transform: translateY(10px);
+}
+#extra_fields .inner .col .box .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  float: none;
+  opacity: 1;
+  text-shadow: none;
+  font-size: inherit;
+  font-weight: normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  display: none;
+  cursor: pointer;
+}
+#extra_fields .inner .col .box .close span {
+  height: 40px;
+  width: 40px;
+  border: 1px solid #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  font-size: 20px;
+  cursor: pointer;
+  background: #fff;
+  color: #000;
+}
+#extra_fields .inner .col .box .close:hover span {
+  background: none;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+#extra_fields .inner .col .box .text {
+  display: none;
+  height: 100%;
+}
+#extra_fields .inner .col .box .text .content {
+  padding: 50px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+#extra_fields .inner .col .box .text .content p,
+#extra_fields .inner .col .box .text .content li {
+  line-height: 2;
+  letter-spacing: 1px;
+  color: #d8d8d8;
+  font-size: 16px;
+}
+#extra_fields .inner .col .box .text .content p {
+  margin-bottom: 10px;
+}
+#extra_fields .inner .col .box .text .content ul,
+#extra_fields .inner .col .box .text .content ol {
+  list-style: initial;
+  padding-left: 15px;
+}
+#extra_fields .inner .col .box:hover .open p {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+#extra_fields .inner .col:last-child .box {
+  border-right: 0px;
+}
+#extra_fields .inner .col.active {
+  flex: 0 0 50%;
+}
+#extra_fields .inner .col.active .box {
+  cursor: initial;
+}
+#extra_fields .inner .col.active .box .open {
+  display: none;
+}
+@media screen and (max-width: 1199px) {
+  #extra_fields .inner .col .box .open h3 {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+  #extra_fields {
+    height: 600px;
+  }
+  #extra_fields .inner .col .box .open p {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  #extra_fields .inner .col .box .open {
+    padding: 250px 15px 0px 15px;
+  }
+  #extra_fields .inner .col .box .text .content p,
+  #extra_fields .inner .col .box .text .content li {
+    font-size: 14px;
+  }
+  #extra_fields .inner .col .box .text .content {
+    padding: 30px;
+  }
+  #extra_fields .inner .col.active {
+    flex: 0 0 45%;
+  }
+  #extra_fields .inner .col .box .open h3 {
+    overflow: hidden;
+    max-width: 100%;
+  }
+  #extra_fields .inner .col .box .open h3.hidden {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media screen and (max-width: 991px) {
+  #extra_fields .inner .col .box .text .content {
+    padding: 20px;
+  }
+  #extra_fields .inner .col .box .text .content p,
+  #extra_fields .inner .col .box .text .content li {
+    line-height: 1.5;
+  }
+  #extra_fields .inner .col .box .text .content p {
+    margin-bottom: 5px;
+  }
+  #extra_fields .inner .col .box .text .content p,
+  #extra_fields .inner .col .box .text .content li {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #extra_fields .inner {
+    display: flex;
+    flex-direction: column;
+  }
+  #extra_fields .inner .col .box {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: none;
+  }
+  #extra_fields .inner .col .box .open {
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: center;
+    padding: 0px;
+    max-width: 90%;
+    margin: 0px auto;
+  }
+  #extra_fields .inner .col .box {
+    min-height: 130px;
+    height: auto;
+  }
+  #extra_fields .inner .col .box .open p {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin-top: 5px;
+  }
+  #extra_fields {
+    height: auto;
+  }
+  #extra_fields .inner {
+    display: block;
+    height: auto;
+  }
+  #extra_fields .inner .col .box .open h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+  }
+  #extra_fields .inner .col .box .open span {
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+  }
+  #extra_fields .inner .col .box .close span {
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+  }
+  #extra_fields .inner .col .box .close {
+    right: 15px;
+    top: 15px;
+  }
+  #extra_fields.is-active:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  #extra_fields .inner .col .box .text {
+    height: auto;
+  }
+  #extra_fields .inner .col .box .text .content {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  #extra_fields .inner .col .box .text .content.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media screen and (max-width: 575px) {
+  #extra_fields .inner .col .box .close {
+    right: 5px;
+    top: 5px;
+  }
+}
